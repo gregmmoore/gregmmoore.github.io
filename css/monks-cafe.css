@@ -16,7 +16,7 @@ body {
 	background-color: rgb(10, 10, 70);
 }
 .jumbotron {
-	background: url("../img/toms-restaurant.jpg");
+	background: url("../img/restaurant.jpg");
 	background-size: cover;
 	height: 500px;
 	border-radius: 0 !important;
