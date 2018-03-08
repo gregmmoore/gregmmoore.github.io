@@ -6,14 +6,24 @@
    	<!-- Monk's Cafe CSS -->
 	<link rel="stylesheet" href="css/monks-cafe.css">
 	<!-- Bootsrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
+
+	<!-- navbar -->
+	<div id="navbar" class="navbar-collapse navbar-inverse collapse navbar-fixed-top">
+		<a href="#" class="navbar-brand">Monk's Café</a>
+		<ul class="nav navbar-nav navbar-right">
+		  <li class="active"><a href="#reservation">Reservation</a></li>
+		  <li><a href="#map">Map</a></li>
+		</ul>
+	</div>
+
 	<div class="jumbotron">
 		<div class="header">
 		   	<h1>Monk's Cafe</h1>
 		   	<hr></hr>
-		   	<p><i>The Coffee Shop</i></p>
+		   	<p><i>A Delicatessen</i></p>
 		</div>
 	</div>   
 	<div class="container reservation-wrap">
@@ -53,12 +63,7 @@
 			<div class="header">
 			   	<h3>Come Dine with Us</h3>
 			</div>
-			<div id="map"></div>
-
-				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-				<script src="js/main.js"></script>
-
-				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfbeZKg9H015sqhLObzpbMg_3zDE-XaIg&callback=initMap"></script>	
+			<div id="map"></div>	
 			</div>
 			<div class="container review-wrap">
 				<!-- CUSTOMER REVIEWS -->
@@ -87,7 +92,17 @@
 		   		<p>(212) 866-6227</p>
 			</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <!-- bootstrap js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- handlebars -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <!-- custom js -->
+  <script src="js/main.js"></script>
+  <!-- google maps -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfbeZKg9H015sqhLObzpbMg_3zDE-XaIg&callback=initMap"></script>
 </body>
 </html>

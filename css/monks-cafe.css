@@ -12,6 +12,9 @@ body {
 .container {
 	background-color: #efefef;
 }
+#navbar, .navbar-inverse {
+	background-color: rgb(10, 10, 70);
+}
 .jumbotron {
 	background: url("../img/toms-restaurant.jpg");
 	background-size: cover;
