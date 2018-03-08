@@ -18,15 +18,16 @@ body {
 .jumbotron {
 	background: url("../img/restaurant.jpg");
 	background-size: cover;
-	height: 500px;
+	height: 600px;
 	border-radius: 0 !important;
+	margin-bottom: 0 !important;
 }
 .jumbotron > .header {
 	text-align: center;
 	color: #ffffff;
 	padding: 80px 0;
 	max-width: 450px;
-	margin: 20px auto;
+	margin: 100px auto;
 	background: rgba(10, 10, 70, 0.75);
 }
 .jumbotron > .header > h1 {
@@ -36,6 +37,13 @@ body {
 }
 .jumbotron > .header > p {
 	font-size: 30px;
+}
+.texture {
+	background: url("../img/metal-texture.jpg");
+	background-size: 100%;
+	height: 75px;
+	border-radius: 0 !important;
+	margin: 0;
 }
 .header {
 	text-align: center;
@@ -98,7 +106,7 @@ hr {
 	width: 100%;
 	height: 225px;
 	background: rgb(10, 10, 70);
-	color: #ffffff;
+	color: #9d9d9d;
 	padding: 30px;
 }
 .footer > hr {
