@@ -49,9 +49,11 @@ body {
 	border-radius: 0 !important;
 	margin: 0;
 }
-.header {
+.header > h2 {
 	text-align: center;
-	color: #444444;
+	color: #ffffff;
+	margin: 0 0 15px 0;
+	font-weight: 300;
 }
 .reservation-wrap {
 	margin-bottom: 40px;
@@ -97,6 +99,9 @@ button {
 }
 .button-holder {
 	text-align: center;
+}
+div.dropdown button, .reservation-button {
+	color: #444444 !important;
 }
 hr {
 	background-color: #ffffff; 
