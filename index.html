@@ -28,6 +28,14 @@
 	</div>
 
 	<div class="texture">
+
+			<!-- template for reservation-list -->
+	<script id="reservation-template" type="text/x-handlebars-template">
+		<tr>
+			<td>{{name}}</td>
+			<td>{{day}}</td>
+		</tr>
+	</script>
 		
 	</div> 
 	<!-- reservation form -->
@@ -58,25 +66,9 @@
 			</div>
 		</div>  
 	<div class="container reservation-wrap">
-		<!-- RESERVATIONS -->
-	   <!--<div class="header">
-	   		<h2>Reservations</h2>
-	   </div> -->
 
 	   <div class="row">
-		   		<div class="col-lg-6">
-		   			<div class="col-wrap">
-		   				<h4>Make a Reservation</h4>
-		   				<form id="monk-reservation">
-		   					<input type="text" id="name" placeholder="Name">
-		   					<input type="text" id ="day" placeholder="Day">
-		   					<div class="button-holder">
-		   						<button>Confirm Reservation</button>
-		   					</div>
-		   				</form>
-		   			</div>
-		   		</div>
-		   		<div class="col-lg-6">
+		   		<div class="col-lg-12">
 		   			<div class="col-wrap">
 		   				<h4>Existing Reservations</h4>
 		   				<table border="0" cellpadding="0" cellspacing="0">
@@ -84,9 +76,7 @@
 		   						<th>Name</th>
 		   						<th>Day</th>
 		   					</thead>
-		   					<tbody>
-		   						[form data will publish here]
-		   					</tbody>
+		   					<tbody class="reservation-list"></tbody>
 		   				</table>
 		   			</div>
 	   			</div>
