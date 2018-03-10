@@ -24,43 +24,43 @@ $(".reservations").on("submit", function(e) {
 
     reservationData.name = $(".reservation-name").val();
 
-     // create a section for reservations data in your db
-  var reservationsReference = database.ref('reservations');
-
-  reservationsReference.push(reservationData);
+    // push configured data object to database
+  database.ref('reservations').push(reservationData);
 });
 
-// retrieve reservations data when page loads and when reservations are added
-function getReservations() {
 
-  // use reference to database to listen for changes in reservations data
-  database.ref('reservations').on('value', function(results) {
+// on initial load and addition of each reservation update the view
+database.ref('reservations').on('child_added', function(myres) {
+  // grab element to hook to
+  var reservationList = $('.reservation-list');
+  // get data from database
+  var reservations = myres.val();
+  // get your template from your script tag
+  var source = $("#reservation-template").html();
+  // compile template
+  var template = Handlebars.compile(source);
+  // pass data to template to be evaluated within handlebars
+  // as the template is created
+  var reservationTemplate = template(reservations);
+  // append created templated
+  reservationList.append(reservationTemplate);
+});
 
-    // Get all reservations stored in the results we received back from Firebase
-    var allReservations = results.val();
 
-    // remove all list reservations from DOM before appending list reservations
-    $('.reservations').empty();
+var d = new Date();
 
-    // iterate (loop) through all reservations coming from database call
-    for (var reservation in allReservations) {
-    // Create an object literal with the data we'll pass to Handlebars
-      var context = {
-        name: allReservations[reservation].name,
-        day: allReservations[reservation].day,
-        reservationId: reservation
-      };
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-      console.log(context.name);
+var currentDay = days[d.getDay()];
 
-    }
-
-  });
-
+function storeAvail() {
+  if (currentDay !== "Sunday" && currentDay !== "Saturday") {
+    document.querySelector(".storeOpen").innerHTML = "We're Open!";
+  } 
+  else {
+    document.querySelector(".storeOpen").innerHTML = "Sorry, we're closed";
+  }
 }
-
-// When page loads, get reservations
-getReservations();
 
 function initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {

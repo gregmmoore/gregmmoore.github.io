@@ -8,7 +8,7 @@
 	<!-- Bootsrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body>
+<body onload="storeAvail();"">
 
 	<!-- navbar -->
 	<div id="navbar" class="navbar-collapse navbar-inverse collapse navbar-fixed-top">
@@ -28,14 +28,6 @@
 	</div>
 
 	<div class="texture">
-
-			<!-- template for reservation-list -->
-	<script id="reservation-template" type="text/x-handlebars-template">
-		<tr>
-			<td>{{name}}</td>
-			<td>{{day}}</td>
-		</tr>
-	</script>
 		
 	</div> 
 	<!-- reservation form -->
@@ -66,7 +58,6 @@
 			</div>
 		</div>  
 	<div class="container reservation-wrap">
-
 	   <div class="row">
 		   		<div class="col-lg-12">
 		   			<div class="col-wrap">
@@ -81,12 +72,25 @@
 		   			</div>
 	   			</div>
 	   		</div><!-- /.row -->
+
+	   			<!-- template for reservation-list -->
+			<script id="reservation-template" type="text/x-handlebars-template">
+				<tr>
+					<td>{{name}}</td>
+					<td>{{day}}</td>
+				</tr>
+			</script>
+
+			<div class="storeOpen"></div>
+
+
 	   		<!-- COME DINE WITH US -->
 			<div class="header">
 			   	<h3>Come Dine with Us</h3>
 			</div>
-			<div id="map"></div>	
-			</div>
+			<div id="map"></div>
+	</div>	
+			
 			<div class="container review-wrap">
 				<!-- CUSTOMER REVIEWS -->
 			   <div class="header">
@@ -107,12 +111,14 @@
 	   		</div><!-- /.row -->
 			</div>
 			<div class="footer">
-				<h2>Delicatessen</h2>
+				<h2>Monk's Cafe</h2>
 				<hr></hr>
-		   		<p><i>A Delicatessen</i></p>
+		   		<p><i>Eat, drink and socialize</i></p>
 		   		<p>21567 Broadway, New York, NY 10015</p>
 		   		<p>(212) 866-6227</p>
 			</div>
+			<!-- template for reservation-list -->
+	
 
 	<!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>

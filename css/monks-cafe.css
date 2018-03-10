@@ -82,11 +82,12 @@ table {
 	border: 1px solid #cccccc;
 	border-collapse: separate !important;
 	background-color: #efefef;
+	padding: 10px;
 }
 th {
 	padding: 5px;
 	color: #444444;
-	text-align: center !important;
+	text-align: left !important;
 }
 td {
 	padding: 5px;
@@ -98,10 +99,15 @@ button {
 	background-color: #ce1126;
 	color: #ffffff !important;
 }
+.btn-default.reservation-button {
+	background-color: #ce1126 !important;
+	color: #ffffff;
+	border: 0;
+}
 .button-holder {
 	text-align: center;
 }
-div.dropdown button, .reservation-button {
+.dropdown > .btn-default {
 	color: #444444 !important;
 }
 hr {
