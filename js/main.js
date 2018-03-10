@@ -24,8 +24,11 @@ $(".reservations").on("submit", function(e) {
 
     reservationData.name = $(".reservation-name").val();
 
+    var review = $(".review").val();
+
     // push configured data object to database
   database.ref('reservations').push(reservationData);
+  database.ref('reviews').push(review);
 });
 
 
