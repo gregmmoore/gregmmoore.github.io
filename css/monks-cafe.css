@@ -77,6 +77,12 @@ form > input {
 	padding: 5px;
 	margin-bottom: 15px;
 }
+form textarea {
+	padding: 5px;
+	width: 250px;
+	height: 75px;
+	resize: none;
+}
 table {
 	width: 100%;
 	border: 1px solid #cccccc;
@@ -157,4 +163,10 @@ img {
 }
 .review-wrap .col-wrap {
 	margin-top: -5px;
+}
+.review-wrap .row {
+	padding: 20px;
+}
+.review-wrap input, .review-wrap textarea, .review-wrap button {
+	margin: 0 0 15px 0;
 }

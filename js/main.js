@@ -13,6 +13,7 @@
 var database = firebase.database();
 
 var reservationData = {};
+var reviewData = {};
 
 // set the day when an option is clicked on
 $(".reservation-day li").on("click", function() {
@@ -24,11 +25,21 @@ $(".reservations").on("submit", function(e) {
 
     reservationData.name = $(".reservation-name").val();
 
-    var review = $(".review").val();
-
     // push configured data object to database
   database.ref('reservations').push(reservationData);
-  database.ref('reviews').push(review);
+  $(".reservations")[0].reset();
+});
+
+// sumbit customer reviews
+$(".reviews").on("submit", function(e) {
+    e.preventDefault();
+
+    reviewData.review = $(".review").val();
+    reviewData.name = $(".review-name").val();
+
+    // push configured data object to database
+  database.ref('reviews').push(reviewData);
+  $(".reviews")[0].reset();
 });
 
 
