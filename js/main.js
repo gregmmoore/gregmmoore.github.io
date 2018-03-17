@@ -78,6 +78,12 @@ database.ref('reviews').on('child_added', function(myrev) {
   var reviewsTemplate = template(reviews);
   // append created templated
   customerReviews.append(reviewsTemplate);
+
+  $('.customer-reviews').slick('unslick'); /* ONLY remove the classes and handlers added on initialize */
+  //$('.my-review').remove(); /* Remove current slides elements, in case that you want to show new slides. */
+  $('.customer-reviews').slick({
+        arrows: false,
+        dots: true}); /* Initialize the slick again */
 });
 
 var d = new Date();
@@ -109,7 +115,7 @@ function initMap() {
 
 // initialize slick slider
 $(document).ready(function(){
-    $('.slick-reviews').slick({
+    $('.customer-reviews').slick({
         arrows: false,
         dots: true
        
