@@ -3,10 +3,20 @@
 <head>
    <meta charset="UTF-8">
    <title>Monk's Cafe</title>
+
    	<!-- Monk's Cafe CSS -->
 	<link rel="stylesheet" href="css/monks-cafe.css">
+
+	<!-- Slick Slider CSS -->
+	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
 	<!-- Bootsrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:700|Roboto" rel="stylesheet">
+
 </head>
 <body onload="storeAvail();"">
 
@@ -73,7 +83,7 @@
 	   			</div>
 	   		</div><!-- /.row -->
 
-	   			<!-- template for reservation-list -->
+	   		<!-- template for reservation-list -->
 			<script id="reservation-template" type="text/x-handlebars-template">
 				<tr>
 					<td>{{name}}</td>
@@ -95,17 +105,26 @@
 			
 	<div class="container review-wrap">
 
-				<!-- CUSTOMER REVIEWS -->
+		<!-- CUSTOMER REVIEWS -->
 		<div class="header">
 			 <h3>Customer Reviews</h3>
 		</div>
 		<div class="row">
 			<div class="col-lg-8">
-		   		<div class="col-wrap">
-		   			<img src="img/jerry.jpg">
-		   			<h2>“Big lettuce, big carrots, tomatoes like volleyballs.”</h2>
-		   			<p>— Jerry Seinfeld, on The BIG Salad</p>
+		   		<div class="col-wrap slick-reviews">
+		   			<div class="customer-reviews"></div>
+		   			<div>THis is a test</div>
+		   			<div>THis is a test</div>
+		   			<div>THis is a test</div>
 		   		</div>
+		   		<!-- template for customer-reviews -->
+				<script id="reviews-template" type="text/x-handlebars-template">
+				<div class="col-wrap">
+		   			<img src="img/jerry.jpg">
+		   			<h2>"{{review}}"</h2>
+		   			<p>— {{name}}</p>
+		   		</div>
+			</script>
 		   	</div>
 		   	<div class="col-lg-4">
 		   		<div class="col-wrap">
@@ -127,20 +146,35 @@
 		<p>21567 Broadway, New York, NY 10015</p>
 		<p>(212) 866-6227</p>
 	</div>
-			<!-- template for reservation-list -->
+			
 	
 
 	<!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
   <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <!-- bootstrap js -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- handlebars -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <!-- slick slider -->
+  <script type="text/javascript" src="slick/slick.min.js"></script>
   <!-- custom js -->
   <script src="js/main.js"></script>
   <!-- google maps -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfbeZKg9H015sqhLObzpbMg_3zDE-XaIg&callback=initMap"></script>
+
+  <script>
+  $(document).ready(function(){
+       $('.slick-reviews').slick({
+       	arrows: false,
+       	dots: true
+       
+      });
+    });
+</script>
+
 </body>
 </html>

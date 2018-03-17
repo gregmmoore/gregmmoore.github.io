@@ -60,6 +60,22 @@ database.ref('reservations').on('child_added', function(myres) {
   reservationList.append(reservationTemplate);
 });
 
+// on initial load and addition of each review update the view
+database.ref('reviews').on('child_added', function(myrev) {
+  // grab element to hook to
+  var customerReviews = $('.customer-reviews');
+  // get data from database
+  var reviews = myrev.val();
+  // get your template from your script tag
+  var source = $("#reviews-template").html();
+  // compile template
+  var template = Handlebars.compile(source);
+  // pass data to template to be evaluated within handlebars
+  // as the template is created
+  var reviewsTemplate = template(reviews);
+  // append created templated
+  customerReviews.append(reviewsTemplate);
+});
 
 var d = new Date();
 
@@ -77,13 +93,17 @@ function storeAvail() {
 }
 
 function initMap() {
-	var map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 40.8054491, lng: -73.9654415},
-		zoom: 17
-	});
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 40.8054491, lng: -73.9654415},
+    zoom: 17
+  });
 
-	var marker = new google.maps.Marker({
-		position: {lat: 40.8054491, lng: -73.9654415},
-		map: map
-	});
+  var marker = new google.maps.Marker({
+    position: {lat: 40.8054491, lng: -73.9654415},
+    map: map
+  });
 }
+
+
+
+
