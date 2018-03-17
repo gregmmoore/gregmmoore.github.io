@@ -177,3 +177,7 @@ img {
 .review-wrap input, .review-wrap textarea, .review-wrap button {
 	margin: 0 0 15px 0;
 }
+textarea.form-control {
+	width: 250px !important;
+	height: 150px !important;
+}
