@@ -181,3 +181,20 @@ textarea.form-control {
 	width: 250px !important;
 	height: 150px !important;
 }
+.storeOpen {
+	text-align: center;
+	font-size: 24px;
+}
+.store-hours, .store-hours th {
+	text-align: center !important;
+}
+.store-hours {
+	margin-bottom: 20px;
+}
+.storeOpen + table th {
+	font-size: 18px;
+}
+.storeOpen hr {
+	padding: 0;
+	margin:0;
+}
