@@ -8,6 +8,8 @@ html, body {
 }
 body {
 	background-color: #efefef !important;
+	background: url("../img/sandwich-bkgrnd.jpg");
+	
 }
 h1, h2, h3, h4, p {
 	font-family: 'Roboto', sans-serif !important;
@@ -153,9 +155,10 @@ img {
 	width: 100%;
 }
 .review-wrap {
-	background-color: #ffffff;
+	
 	padding: 15px 0;
 	margin: 40px 0;
+	padding: 0 30px !important;
 
 }
 .review-wrap h3, .review-wrap h2 {
@@ -169,6 +172,7 @@ img {
 }
 .review-wrap .row {
 	padding: 20px;
+	background-color: #ffffff;
 }
 .review-wrap input, .review-wrap textarea, .review-wrap button {
 	margin: 0 0 15px 0;

@@ -16,14 +16,17 @@ var reservationData = {};
 var reviewData = {};
 
 // set the day when an option is clicked on
-$(".reservation-day li").on("click", function() {
-    reservationData.day = $(this).text();
-});
+//$(".reservation-day li").on("click", function() {
+//    reservationData.day = $(this).text();
+//});
 
 $(".reservations").on("submit", function(e) {
     e.preventDefault();
 
     reservationData.name = $(".reservation-name").val();
+
+    // set the day using jquery date picker
+    reservationData.day = $(".reservation-day").val();
 
     // push configured data object to database
   database.ref('reservations').push(reservationData);
@@ -103,6 +106,20 @@ function initMap() {
     map: map
   });
 }
+
+// initialize slick slider
+$(document).ready(function(){
+    $('.slick-reviews').slick({
+        arrows: false,
+        dots: true
+       
+      });
+    });
+
+// initialize jquery date picker
+$(function() {
+    $( "#datepicker" ).datepicker();
+  } );
 
 
 

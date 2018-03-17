@@ -7,6 +7,8 @@
    	<!-- Monk's Cafe CSS -->
 	<link rel="stylesheet" href="css/monks-cafe.css">
 
+	 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 	<!-- Slick Slider CSS -->
 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
   	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
@@ -51,7 +53,8 @@
 				    <input type="text" class="form-control reservation-name" placeholder="Enter name">
 				  </div>
 				  <div class="form-group">
-						<div class="dropdown">
+				  	<input type="text" class="form-control reservation-day" placeholder="Pick a day" id="datepicker">
+						<!--<div class="dropdown">
 						  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
 						    Select A Day
 						    <span class="caret"></span>
@@ -61,7 +64,7 @@
 						    <li><a>Tomorrow</a></li>
 						    <li><a>The day after next</a></li>
 						  </ul>
-						</div>
+						</div>-->
 				  </div>
 				  <button class="btn btn-default reservation-button">Set Reservation</button>
 				</form>
@@ -69,9 +72,14 @@
 		</div>  
 	<div class="container reservation-wrap">
 	   <div class="row">
-		   		<div class="col-lg-12">
+		   		<div class="col-lg-8">
 		   			<div class="col-wrap">
-		   				<h4>Existing Reservations</h4>
+		   				<img src="img/sandwich.jpg">
+		   			</div>
+	   			</div>
+	   			<div class="col-lg-4">
+		   			<div class="col-wrap">
+		   				<h4>Booked Reservations</h4>
 		   				<table border="0" cellpadding="0" cellspacing="0">
 		   					<thead>
 		   						<th>Name</th>
@@ -111,11 +119,9 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-8">
-		   		<div class="col-wrap slick-reviews">
-		   			<div class="customer-reviews"></div>
-		   			<div>THis is a test</div>
-		   			<div>THis is a test</div>
-		   			<div>THis is a test</div>
+		   		<div class="col-wrap ">
+		   			<div class="customer-reviews slick-reviews"></div>
+		   			
 		   		</div>
 		   		<!-- template for customer-reviews -->
 				<script id="reviews-template" type="text/x-handlebars-template">
@@ -147,7 +153,6 @@
 		<p>(212) 866-6227</p>
 	</div>
 			
-	
 
 	<!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
@@ -155,6 +160,8 @@
   <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- bootstrap js -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- handlebars -->
@@ -165,16 +172,6 @@
   <script src="js/main.js"></script>
   <!-- google maps -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfbeZKg9H015sqhLObzpbMg_3zDE-XaIg&callback=initMap"></script>
-
-  <script>
-  $(document).ready(function(){
-       $('.slick-reviews').slick({
-       	arrows: false,
-       	dots: true
-       
-      });
-    });
-</script>
 
 </body>
 </html>
